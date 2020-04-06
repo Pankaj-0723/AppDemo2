@@ -1,0 +1,21 @@
+<h2>{{name}}</h2>
+<button (click)="onSubmit(name)">Click</button><br/><br/>
+<input type="text" name="name" [(ngModel)]="name"/>
+<div *ngIf="isValid">
+<h3>We are here...</h3>
+</div>
+<table border="1">
+  <tr>
+    <td colspan="3"> Employee Details</td>
+  </tr>
+  <tr *ngFor="let data of EmployeeData">
+    <td>{{data.name}}</td>
+    <td>{{data.salary}}</td>
+    <td><button (click)="onChange(data)">Salary Change</button></td>
+  </tr>
+</table>
+<ul *ngFor="let data of EmployeeData">
+  <li>{{data.name}}</li>
+  <li>{{data.salary}}</li>
+</ul>
+
